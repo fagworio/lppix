@@ -81,6 +81,16 @@ describe('PixLandingPage', () => {
     expect(screen.getByRole('button', { name: 'Selecione comprovante Pix' })).toBeVisible();
   });
 
+  it('does not force the mobile camera when opening the receipt picker', async () => {
+    const user = userEvent.setup();
+    render(<PixLandingPage minPixAmountCents={9700} maxUploadSizeMb={8} />);
+    await unlockAgeGate(user);
+
+    const fileInput = screen.getByLabelText(/Arquivo do comprovante Pix/i);
+
+    expect(fileInput).not.toHaveAttribute('capture');
+  });
+
   it('tracks page view once on page load', () => {
     const { fbq, gtag } = installTrackingSpies();
 

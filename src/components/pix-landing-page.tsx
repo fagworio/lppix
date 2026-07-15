@@ -281,7 +281,7 @@ export function PixLandingPage({
           <p className="section-step">02. Envie seu comprovante</p>
           <h2 id="upload-title">Selecione o comprovante Pix</h2>
           <p>Envie uma imagem JPG, PNG ou WebP de até {maxUploadSizeMb} MB.</p>
-          <p>Câmera, galeria e screenshots são aceitos em smartphones.</p>
+          <p>Abra a galeria ou selecione um screenshot do comprovante salvo no celular.</p>
         </div>
 
         <div className="upload-trigger-group">
@@ -298,7 +298,6 @@ export function PixLandingPage({
           name="receipt"
           type="file"
           accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp"
-          capture="environment"
           onChange={(event) => handleSelect(event.target.files?.[0] ?? null)}
         />
 
