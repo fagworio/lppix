@@ -250,7 +250,7 @@ export function PixLandingPage({
 
       <main className={`page-shell ${isAgeVerified ? '' : 'page-shell--locked'}`} aria-hidden={!isAgeVerified}>
       <section className="hero-card">
-        <p className="eyebrow">01. Oferta e CTA</p>
+        <p className="eyebrow">01. Faça parte de um grupo exclusivo!</p>
         <h1>Entre para o Grupo VIP de Dicas Esportivas</h1>
         <p className="hero-copy">
           Receba análises, informações e conteúdos exclusivos diretamente pelo WhatsApp.
@@ -278,7 +278,7 @@ export function PixLandingPage({
         aria-labelledby="upload-title"
       >
         <div className="section-header">
-          <p className="section-step">02. Upload de imagem</p>
+          <p className="section-step">02. Envie seu comprovante</p>
           <h2 id="upload-title">Selecione o comprovante Pix</h2>
           <p>Envie uma imagem JPG, PNG ou WebP de até {maxUploadSizeMb} MB.</p>
           <p>Câmera, galeria e screenshots são aceitos em smartphones.</p>
@@ -307,7 +307,7 @@ export function PixLandingPage({
         {selectedFile && previewUrl ? (
           <div className="preview-card">
             <div className="section-header section-header--compact">
-              <p className="section-step">03. Análise por IA/OCR</p>
+              <p className="section-step">03. Análise gerada por IA</p>
               <p>
                 Após o upload, a análise acontece automaticamente para detectar texto, identificar banco, valor
                 monetário e confiança da leitura.
@@ -335,12 +335,12 @@ export function PixLandingPage({
               </div>
             ) : null}
             <div className="preview-actions">
-              <button type="button" className="secondary-button" onClick={clearSelection}>
+              <button type="button" className="secondary-button remove" onClick={clearSelection}>
                 Remover imagem
               </button>
               <button
                 type="button"
-                className="secondary-button"
+                className="primary-button"
                 onClick={handleUploadButtonClick}
               >
                 Enviar nova imagem
@@ -369,7 +369,7 @@ export function PixLandingPage({
               </div>
               <div>
                 <dt>Status</dt>
-                <dd>{result.status === 'approved' ? 'Aprovado' : result.status === 'rejected' ? 'Rejeitado' : 'Erro'}</dd>
+                <dd className={result.status === 'approved' ? 'aproved' : 'rejected'}>{result.status === 'approved' ? 'Aprovado' : result.status === 'rejected' ? 'Rejeitado' : 'Erro'}</dd>
               </div>
             </dl>
             <p className="privacy-note">

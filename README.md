@@ -96,6 +96,14 @@ Comportamentos do mock:
 ### `OCR_PROVIDER=openai`
 Usa `OPENAI_API_KEY` no backend e envia a imagem já tratada para a API da OpenAI. A chave nunca vai para o frontend.
 
+O prompt do OCR foi ajustado para priorizar o **banco/app de quem enviou o Pix**. A ordem desejada é:
+
+1. marca/logo/cabeçalho do app emissor usado para fazer o Pix;
+2. seção `Origem` / pagador / remetente / conta debitada;
+3. banco do destinatário apenas como último fallback.
+
+Quando houver nome societário e marca comercial, o OCR também tenta preferir o nome mais reconhecível para exibição, por exemplo `Nubank` em vez de `Nu Pagamentos`.
+
 ## Rodando localmente
 
 ```bash

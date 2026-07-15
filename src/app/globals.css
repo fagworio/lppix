@@ -71,7 +71,7 @@ h3 {
 
 h1 {
   margin-top: 12px;
-  font-size: clamp(2rem, 6vw, 3.4rem);
+  font-size: clamp(2rem, 6vw, 2.5rem);
   line-height: 1.05;
 }
 
@@ -171,6 +171,11 @@ h1 {
   background: transparent;
   color: #f8fafc;
   border-color: rgba(148, 163, 184, 0.4);
+}
+
+.secondary-button.remove {
+  background: #ed5e68;
+  color: white;
 }
 
 .primary-button:hover,
@@ -300,6 +305,7 @@ h1 {
   border-radius: 16px;
   border: 1px solid rgba(148, 163, 184, 0.18);
   background: rgba(15, 23, 42, 0.72);
+
 }
 
 .result-grid dt {
@@ -311,6 +317,14 @@ h1 {
   margin: 6px 0 0;
   font-size: 1.05rem;
   font-weight: 700;
+}
+
+.result-grid .aproved {
+  color: #22c55e;
+}
+
+.result-grid .rejected {
+  color: red;
 }
 
 .privacy-note {
